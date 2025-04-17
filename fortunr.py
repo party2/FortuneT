@@ -1,13 +1,31 @@
-# fortune.py (v1.0)
+# fortune.py (v1.1)
 
-print("🔮 Welcome to Parth Pandya's Fortune Teller (21JE0635) 🔮")
-mood = input("How are you feeling today? (happy/sad/neutral): ").lower()
+import random
 
-if mood == "happy":
-    print("✨ Your fortune: Great things await you, Aryan! Keep smiling. ✨")
-elif mood == "sad":
-    print("💙 Your fortune: Better days are coming, stay strong.")
-elif mood == "neutral":
-    print("😐 Your fortune: Sometimes peace lies in simplicity.")
+print("🔮 Welcome to Parth Pandya's Fortune Teller (21JE10635) 🔮")
+
+mood = input("How are you feeling today? (happy/sad/neutral/stressed): ").lower()
+
+fortunes = {
+    "happy": [
+        "✨ Great things await you, Aryan! Keep smiling.",
+        "🌈 Joy surrounds you today. Embrace it!"
+    ],
+    "sad": [
+        "💙 This too shall pass. Aryan believes in you.",
+        "🌧️ Rainy days make the flowers bloom. Stay hopeful."
+    ],
+    "neutral": [
+        "😐 Peace and clarity are within reach.",
+        "📘 Embrace simplicity; profound truths hide there."
+    ],
+    "stressed": [
+        "🧘‍♂️ Breathe in calm, exhale stress. Aryan's got your back.",
+        "🔥 Stress tests your strength—you're passing with grace."
+    ]
+}
+
+if mood in fortunes:
+    print(random.choice(fortunes[mood]))
 else:
     print("🤔 Sorry, I don't recognize that mood.")
